@@ -25,18 +25,18 @@ spec:
         volumeMounts:
         - name: minio-data
           mountPath: /data
-        # env:
-        #   - name: MINIO_ROOT_USER
-        #     valueFrom:
-        #       configMapKeyRef:
-        #         name: {{ .Release.Name }}-minio-config
-        #         key: MINIO_ROOT_USER
-        #   - name: MINIO_ROOT_PASSWORD
-        #       valueFrom:
-        #         configMapKeyRef:
-        #           name: {{ .Release.Name }}-minio-config
-        #           key: MINIO_ROOT_PASSWORD
-      volumes:
-      - name: minio-data
-        persistentVolumeClaim:
-          claimName: {{ .Release.Name }}-minio-pvc
+        volumes:
+        - name: minio-data
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-minio-pvc
+        env:
+          - name: MINIO_ROOT_USER
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Release.Name }}-minio-config
+                key: MINIO_ROOT_USER
+          - name: MINIO_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}-minio-config
+                  key: MINIO_ROOT_PASSWORD

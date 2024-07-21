@@ -3,15 +3,15 @@
 replicas: 1
 
 # Credentials (**Do not store sensitive information in plain text.** Use Kubernetes Secrets instead)
-root_user: minioadmin
-root_pass: minioadmin
+username: minioadmin
+password: minioadmin
 
 # Storage configuration
 storage:
   # Adjust size based on your needs
   size: 1Gi
   # Choose a storage class if needed (refer to your Kubernetes documentation)
-  # storageClass: ""
+# storageClass: ""
 
 # Service configuration
 
@@ -20,8 +20,8 @@ service:
   port: 9000
 
 
-  # Enable service for external access (optional)
-  # type: LoadBalancer  # or NodePort
+# Enable service for external access (optional)
+# type: LoadBalancer  # or NodePort
 
 # Resources configuration
 
