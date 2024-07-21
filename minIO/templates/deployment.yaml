@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: minio
-        image: minio/minio:latest  # Adjust image tag if needed
+        image: bitnami/minio:latest  # Adjust image tag if needed
         ports:
         - containerPort: 9000
         volumeMounts:

@@ -79,12 +79,12 @@
                 }
             }
         },
-        "accessKey": {
-            "description": "Access key for MinIO (store in Kubernetes Secret)",
+        "user": {
+            "description": "User for MinIO (store in Kubernetes Secret)",
             "type": "string"
         },
-        "secretKey": {
-            "description": "Secret key for MinIO (store in Kubernetes Secret)",
+        "pass": {
+            "description": "Pass key for MinIO (store in Kubernetes Secret)",
             "type": "string"
         },
         "extraArgs": {
