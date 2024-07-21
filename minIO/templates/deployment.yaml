@@ -14,7 +14,12 @@ spec:
     spec:
       containers:
       - name: minio
-        image: bitnami/minio:latest  # Adjust image tag if needed
+        image: quay.io/minio/minio:latest  # Adjust image tag if needed
+        command:
+        - /bin/bash
+        - -c
+        args: 
+        - minio server /data --console-address :9090
         ports:
         - containerPort: 9000
         volumeMounts:
