@@ -2,8 +2,11 @@
 
 replicas: 1
 
-# Storage configuration
+# Credentials (**Do not store sensitive information in plain text.** Use Kubernetes Secrets instead)
+root_user: minioadmin
+root_pass: minioadmin
 
+# Storage configuration
 storage:
   # Adjust size based on your needs
   size: 1Gi
@@ -15,6 +18,7 @@ storage:
 service:
   # Change port if needed (default: 9000 for MinIO API)
   port: 9000
+
 
   # Enable service for external access (optional)
   # type: LoadBalancer  # or NodePort
@@ -30,10 +34,6 @@ resources:
     cpu: 1000m
     memory: 2Gi
 
-# Credentials (**Do not store sensitive information in plain text.** Use Kubernetes Secrets instead)
-
-root_user: minioadmin
-root_pass: minioadmin
 
 # Additional configuration (refer to MinIO documentation for available options)
 

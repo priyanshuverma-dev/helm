@@ -1,5 +1,13 @@
 {
     "properties": {
+        "username": {
+            "description": "User for MinIO (store in Kubernetes Secret)",
+            "type": "string"
+        },
+        "password": {
+            "description": "Pass key for MinIO (store in Kubernetes Secret)",
+            "type": "string"
+        },
         "replicas": {
             "description": "Number of MinIO server pods to deploy",
             "type": "integer"
@@ -79,14 +87,6 @@
                 }
             }
         },
-        "user": {
-            "description": "User for MinIO (store in Kubernetes Secret)",
-            "type": "string"
-        },
-        "pass": {
-            "description": "Pass key for MinIO (store in Kubernetes Secret)",
-            "type": "string"
-        },
         "extraArgs": {
             "description": "Additional arguments to pass to the MinIO binary",
             "type": "array",
@@ -95,7 +95,17 @@
             }
         }
     },
+    "order": [
+        "username",
+        "password",
+        "service",
+        "replicas",
+        "resources",
+        "extraArgs"
+    ],
     "required": [
+        "username",
+        "password",
         "replicas",
         "storage",
         "service",
