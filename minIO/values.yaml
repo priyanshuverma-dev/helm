@@ -32,8 +32,8 @@ resources:
 
 # Credentials (**Do not store sensitive information in plain text.** Use Kubernetes Secrets instead)
 
-root_user: "user"
-root_pass: "password123"
+root_user: minioadmin
+root_pass: minioadmin
 
 # Additional configuration (refer to MinIO documentation for available options)
 
