@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
         app: minio
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
     spec:
       containers:
       - name: minio
